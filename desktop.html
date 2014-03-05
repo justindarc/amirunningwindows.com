@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/desktop.css" media="screen" />
+
+    <title>amirunningwindows.com</title>
+  </head>
+
+  <body>
+
+    <div class="desktop">
+      <div class="explorer">
+
+      </div>
+
+      <div class="taskbar">
+        <div class="start-menu">
+          <button type="button" class="start-button" id="start-button">Start</button>
+          <ul>
+
+          </ul>
+        </div>
+
+        <div class="system-tray" id="system-tray">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="bsod" id="bsod">
+      <h1>Windows</h1>
+      <p>
+        A fatal exception 0E has occurred at 0028:C0011E36 in VXD VMM(01) + 00010E36. The current application will be terminated.
+      </p>
+      <ul>
+        <li>* Press any key to terminate the current application.</li>
+        <li>* Press CTRL+ALT+DEL again to restart your computer. You will lose unsaved information in all applications.</li>
+      </ul>
+      <p>
+        Press any key to continue _
+      </p>
+      <canvas></canvas>
+    </div>
+
+    <script src="javascripts/platform.js"></script>
+    <script src="javascripts/desktop.js"></script>
+    <script>
+      kernel.systemTray = new SystemTray(document.getElementById('system-tray'));
+      kernel.startButton = new StartButton(document.getElementById('start-button'));
+      kernel.bsod = new BSOD(document.getElementById('bsod'));
+    </script>
+  </body>
+</html>

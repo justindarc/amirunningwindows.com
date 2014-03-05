@@ -1,0 +1,133 @@
+html, body {
+  background: #000;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+       -o-user-select: none;
+          user-select: none;
+}
+
+* {
+  font-family: "MS Sans Serif", sans-serif;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+button {
+  background: #c0c0c0;
+  border-top: 1px outset #fff;
+  border-right: 1px outset #000;
+  border-bottom: 1px outset #000;
+  border-left: 1px outset #fff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 14px;
+  outline: none;
+}
+
+button:active {
+  border-color: #000 #fff #fff #000;
+}
+
+.desktop {
+  background: #008080;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.taskbar {
+  background: #c0c0c0;
+  border-top: 1px solid #fff;
+  outline: 1px solid #dfdfdf;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 26px;
+}
+
+.system-tray {
+  border: 1px inset #dfdfdf;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: right;
+  position: absolute;
+  margin: 2px;
+  padding: 0 4px;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: 20px;
+}
+
+.bsod {
+  background: #0000aa;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  overflow: hidden;
+  -webkit-transition: height 10s linear;
+     -moz-transition: height 10s linear;
+      -ms-transition: height 10s linear;
+       -o-transition: height 10s linear;
+          transition: height 10s linear;
+}
+
+.bsod.active,
+.bsod.recover {
+  height: 100%;
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+.bsod:before {
+  background: #000;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bsod.active:before {
+  background: none;
+}
+
+.bsod * {
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-size: 16px;
+}
+
+.bsod > ul {
+  list-style: none;
+}
+
+.bsod > canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bsod.active > canvas {
+  display: none;
+}
